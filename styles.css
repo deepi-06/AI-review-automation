@@ -1,0 +1,260 @@
+:root {
+    color-scheme: light;
+    --navy: #183b63;
+    --navy-dark: #102b49;
+    --ink: #172b43;
+    --muted: #66778b;
+    --line: #dce3eb;
+    --surface: #ffffff;
+    --surface-soft: #f4f7fa;
+    --page: #f7f9fc;
+    --shadow: 0 8px 24px rgba(23, 43, 67, 0.06);
+}
+
+html, body, [class*="css"] {
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.stApp {
+    background: var(--page);
+    color: var(--ink);
+}
+
+.stAppViewContainer {
+    animation: page-enter 260ms ease-out both;
+}
+
+.block-container {
+    max-width: 1440px;
+    padding: 2.25rem 2.5rem 3rem;
+}
+
+header[data-testid="stHeader"] {
+    background: rgba(247, 249, 252, 0.92);
+}
+
+[data-testid="stSidebar"] {
+    background: var(--surface);
+    border-right: 1px solid var(--line);
+}
+
+[data-testid="stSidebar"] > div:first-child {
+    padding: 1.25rem 1rem;
+}
+
+[data-testid="stSidebar"] h3 {
+    color: var(--navy-dark);
+    font-size: 1.1rem;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    padding: 0.25rem 0.45rem 0.75rem;
+}
+
+[data-testid="stSidebar"] [data-testid="stRadio"] label {
+    border-radius: 8px;
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+[data-testid="stSidebar"] [data-testid="stRadio"] label:hover {
+    background: var(--surface-soft);
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--navy);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 1.4rem 1.65rem;
+    margin: 0 0 1.5rem;
+    animation: card-enter 320ms ease-out both;
+}
+
+.hero h2 {
+    color: var(--navy-dark);
+    font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+    font-weight: 650;
+    letter-spacing: -0.035em;
+    line-height: 1.25;
+    margin: 0;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 0.96rem;
+    line-height: 1.55;
+    margin: 0.35rem 0 0;
+}
+
+h1, h2, h3, h4 {
+    color: var(--navy-dark);
+    letter-spacing: -0.025em;
+}
+
+[data-testid="stMetric"] {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(23, 43, 67, 0.035);
+    padding: 1rem 1.1rem;
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+[data-testid="stMetric"]:hover {
+    border-color: #b9c8d8;
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+}
+
+[data-testid="stMetricLabel"] {
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 550;
+}
+
+[data-testid="stMetricValue"] {
+    color: var(--navy-dark);
+    font-weight: 650;
+}
+
+[data-testid="stForm"] {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 1.25rem;
+}
+
+[data-testid="stDataFrame"] {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(23, 43, 67, 0.035);
+    overflow: hidden;
+}
+
+[data-testid="stExpander"] {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+[data-testid="stExpander"]:hover {
+    border-color: #bdcad8;
+    box-shadow: 0 4px 14px rgba(23, 43, 67, 0.045);
+}
+
+[data-testid="stTabs"] [role="tab"] {
+    color: var(--muted);
+    font-weight: 550;
+    transition: color 150ms ease;
+}
+
+[data-testid="stTabs"] [role="tab"][aria-selected="true"] {
+    color: var(--navy);
+}
+
+.stButton > button, .stDownloadButton > button, [data-testid="stFormSubmitButton"] > button {
+    border-radius: 8px;
+    font-weight: 550;
+    min-height: 2.65rem;
+    transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.stButton > button:hover, .stDownloadButton > button:hover, [data-testid="stFormSubmitButton"] > button:hover {
+    border-color: #9eafc1;
+    box-shadow: 0 5px 14px rgba(24, 59, 99, 0.12);
+    transform: translateY(-1px);
+}
+
+.stButton > button:active, .stDownloadButton > button:active, [data-testid="stFormSubmitButton"] > button:active {
+    transform: translateY(0);
+}
+
+.stButton > button[kind="primary"], [data-testid="stFormSubmitButton"] > button[kind="primary"] {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: #fff;
+}
+
+.stButton > button[kind="primary"]:hover, [data-testid="stFormSubmitButton"] > button[kind="primary"]:hover {
+    background: var(--navy-dark);
+    border-color: var(--navy-dark);
+}
+
+.stTextInput input, .stTextArea textarea, [data-baseweb="select"] > div,
+[data-testid="stDateInput"] input, [data-testid="stTimeInput"] input {
+    background: var(--surface);
+    border-color: var(--line);
+    border-radius: 8px;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.stTextInput input:focus, .stTextArea textarea:focus,
+[data-testid="stDateInput"] input:focus, [data-testid="stTimeInput"] input:focus {
+    border-color: var(--navy);
+    box-shadow: 0 0 0 2px rgba(24, 59, 99, 0.12);
+}
+
+[data-testid="stProgress"] > div > div > div {
+    background: var(--navy);
+    transition: width 300ms ease;
+}
+
+[data-testid="stAlert"] {
+    border-radius: 9px;
+}
+
+[data-testid="stSpinner"] {
+    color: var(--navy);
+}
+
+a {
+    color: var(--navy);
+}
+
+@keyframes page-enter {
+    from { opacity: 0.72; }
+    to { opacity: 1; }
+}
+
+@keyframes card-enter {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .block-container {
+        padding: 1.15rem 1rem 2rem;
+    }
+
+    .hero {
+        padding: 1.1rem 1.15rem;
+        margin-bottom: 1.1rem;
+    }
+
+    [data-testid="stHorizontalBlock"] {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    [data-testid="stHorizontalBlock"] > [data-testid="column"] {
+        flex: 1 1 100%;
+        min-width: 100%;
+    }
+
+    [data-testid="stMetric"] {
+        padding: 0.8rem 0.9rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

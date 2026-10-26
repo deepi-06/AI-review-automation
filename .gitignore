@@ -1,0 +1,10 @@
+.env
+token.json
+credentials.json
+data/*.db*
+uploads/*
+reports/*
+!*/.gitkeep
+__pycache__/
+.venv/
+*.pyc
